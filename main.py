@@ -30,10 +30,6 @@ if __name__ == '__main__':
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-            if event.type == pygame.MOUSEBUTTONUP:
-                screen.fill('blue')
-                r = 1
-                spis = event.pos
         screen.blit(pygame.image.load(map_file), (0, 0))
         pygame.display.flip()
         clock.tick(fps)
