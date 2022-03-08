@@ -31,15 +31,15 @@ if __name__ == '__main__':
                     z -= 1
                 elif event.key == pygame.K_PAGEDOWN and z < 18:
                     z += 1
-                elif event.key == pygame.K_LEFT and a - dol[z] >= -90:
+                elif event.key == pygame.K_LEFT and a - dol[z] > -90:
                     a -= dol[z]
-                elif event.key == pygame.K_RIGHT and a + dol[z] <= 90:
+                elif event.key == pygame.K_RIGHT and a + dol[z] < 90:
                     a += dol[z]
-                elif event.key == pygame.K_UP and b + shir[z] <= 180:
+                elif event.key == pygame.K_UP and b + shir[z] < 180:
                     b += shir[z]
-                elif event.key == pygame.K_DOWN and b - shir[z] >= -180:
+                elif event.key == pygame.K_DOWN and b - shir[z] > -180:
                     b -= shir[z]
-        map_request = f"http://static-maps.yandex.ru/1.x/?ll={a},{b}&z={z}&l=map"
+        map_request = f"http://static-maps.yandex.ru/1.x/?ll={float(a)},{float(b)}&z={z}&l=map"
         response = requests.get(map_request)
         if not response:
             print("Ошибка выполнения запроса:")
